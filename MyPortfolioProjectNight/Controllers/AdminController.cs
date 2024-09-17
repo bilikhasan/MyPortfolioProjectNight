@@ -13,5 +13,21 @@ namespace MyPortfolioProjectNight.Controllers
         {
             return View();
         }
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialSideBar()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialNavBar()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScripts()
+        {
+            return PartialView();
+        }
     }
 }
