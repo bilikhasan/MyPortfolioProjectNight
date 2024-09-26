@@ -16,8 +16,8 @@
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
-    @foreach(var item in Model)
-            {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>@item.SkillId</td>
             <td>@item.SkillName</td>
@@ -25,6 +25,6 @@
             <td><a href="/Skill/DeleteSkill/@item.SkillId" class="btn btn-danger">Sil</a></td>
             <td><a href="/Skill/UpdateSkill/@item.SkillId" class="btn btn-success">Güncelle</a></td>
         </tr>
-            }
+    }
 </table>
 <a href="/Skill/CreateSkill" class="btn btn-info">Yeni Yetenek Girişi</a>
