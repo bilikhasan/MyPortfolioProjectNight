@@ -78,10 +78,30 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Skill.Where(x => x.Status == true).ToList();
             return PartialView(values);
         }
-
         public PartialViewResult PartialFooter()
         {
             return PartialView();
+        }
+        public PartialViewResult PartialEducation()
+        {
+            var values = context.Education.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialService()
+        {
+            var values = context.Service.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = context.Portfolio.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialTestimonial()
+        {
+            var values = context.Testimonial.ToList();
+            return PartialView(values);
         }
     }
 }
