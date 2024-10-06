@@ -103,5 +103,10 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Testimonial.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialIntern()
+        {
+            var values = context.Internship.ToList();
+            return PartialView(values);
+        }
     }
 }

@@ -40,5 +40,6 @@ namespace MyPortfolioProjectNight.Models
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Portfolio> Portfolio { get; set; }
         public virtual DbSet<Testimonial> Testimonial { get; set; }
+        public virtual DbSet<Internship> Internship { get; set; }
     }
 }
