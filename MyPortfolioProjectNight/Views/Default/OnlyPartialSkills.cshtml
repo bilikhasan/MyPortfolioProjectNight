@@ -1,0 +1,59 @@
+﻿@model PagedList.IPagedList<MyPortfolioProjectNight.Models.Skill>
+@using PagedList;
+
+
+@foreach (var item in Model)
+{
+    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-primary text-center mb-3"><span class="@item.Icon"></span></div>
+
+            <div class="counter-counting d-flex justify-content-center">
+                <h4 class="display-6" data-toggle="counter-up">@item.Rate</h4>
+                <h4 class="display-6"></h4>
+            </div>
+            <p class="mb-0">@item.SkillName</p>
+        </div>
+    </div>
+}
+
+
+
+
+<!-- Sayfalama Linkleri -->
+<div class="pagination-container">
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a href="javascript:void(0)" class="page-link" onclick="loadPage(@(Model.PageNumber - 1))">Önceki</a>
+            </li>
+        }
+
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                <a href="javascript:void(0)" class="page-link" onclick="loadPage(@i)">@i</a>
+            </li>
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a href="javascript:void(0)" class="page-link" onclick="loadPage(@(Model.PageNumber + 1))">Sonraki</a>
+            </li>
+        }
+    </ul>
+</div>
+
+<script type="text/javascript">
+function loadPage(page) {
+    $.ajax({
+        url: '@Url.Action("OnlyPartialSkills", "Default")', // Controller'ın action'ı çağrılıyor
+        data: { sayfa: page }, // Sayfa numarasını gönderiyoruz
+        success: function (result) {
+            $('#partial-content').html(result); // Partial view içerisine yeni sonucu yüklüyoruz
+        }
+    });
+}
+</script>

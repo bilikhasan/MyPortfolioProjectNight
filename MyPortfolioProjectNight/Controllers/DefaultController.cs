@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyPortfolioProjectNight.Models;
-
+using PagedList;
+using PagedList.Mvc;
 
 namespace MyPortfolioProjectNight.Controllers
 {
@@ -73,11 +74,22 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Experience.ToList();
             return PartialView(values);
         }
-        public PartialViewResult PartialSkill()
+        public PartialViewResult PartialSkill(int sayfa=1)
         {
-            var values = context.Skill.Where(x => x.Status == true).ToList();
+            //var values = context.Skill.Where(x => x.Status == true).ToList();
+
+            var values = context.Skill.ToList().ToPagedList(sayfa, 5);
             return PartialView(values);
         }
+
+        public PartialViewResult OnlyPartialSkills(int sayfa =1)
+        {
+            var values = context.Skill.ToList().ToPagedList(sayfa,5);
+            return PartialView(values);
+        }
+
+
+
         public PartialViewResult PartialFooter()
         {
             return PartialView();
