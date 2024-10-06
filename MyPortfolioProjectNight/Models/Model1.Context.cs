@@ -35,11 +35,11 @@ namespace MyPortfolioProjectNight.Models
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
-        public virtual DbSet<SocialMedia> SocialMedia { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Portfolio> Portfolio { get; set; }
         public virtual DbSet<Testimonial> Testimonial { get; set; }
         public virtual DbSet<Internship> Internship { get; set; }
+        public virtual DbSet<SocialMedia> SocialMedia { get; set; }
     }
 }

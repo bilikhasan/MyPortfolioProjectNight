@@ -81,15 +81,11 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Skill.ToList().ToPagedList(sayfa, 5);
             return PartialView(values);
         }
-
         public PartialViewResult OnlyPartialSkills(int sayfa =1)
         {
             var values = context.Skill.ToList().ToPagedList(sayfa,5);
             return PartialView(values);
         }
-
-
-
         public PartialViewResult PartialFooter()
         {
             return PartialView();
@@ -109,7 +105,6 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Portfolio.ToList();
             return PartialView(values);
         }
-
         public PartialViewResult PartialTestimonial()
         {
             var values = context.Testimonial.ToList();
@@ -118,6 +113,12 @@ namespace MyPortfolioProjectNight.Controllers
         public PartialViewResult PartialIntern()
         {
             var values = context.Internship.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialSocialMedia()
+        {
+            var values = context.SocialMedia.ToList();
             return PartialView(values);
         }
     }
