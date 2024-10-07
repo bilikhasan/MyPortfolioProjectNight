@@ -5,10 +5,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+@*<head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+</head>*@
+
+
 @Html.Action("PartialHead", "Default")
+
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -67,13 +72,14 @@
                                             <div class="row g-3">
                                                 <div class="col-lg-12 col-xl-6">
                                                     <div class="form-floating">
-                                                        <input type="text" class="form-control border-0" id="name" placeholder="Adınız Soyadınız" name="NameSurname">
-                                                        <label for="name">Adınız</label>
+                                                        <input type="text" class="form-control border-0" id="name" name="NameSurname" placeholder="Adınız Soyadınız">
+                                                        <label for="name">Adınız Soyadınız</label>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-12 col-xl-6">
                                                     <div class="form-floating">
-                                                        <input type="email" class="form-control border-0" id="email" placeholder="Email Adresiniz" name="Email">
+                                                        <input type="email" class="form-control border-0" id="email" name="Email" placeholder="Email Adresiniz">
                                                         <label for="email">Email adresiniz</label>
                                                     </div>
                                                 </div>
@@ -84,12 +90,18 @@
                                                         <label for="phone">Kategori</label>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-12 col-xl-6">
                                                     <div class="form-floating">
-                                                        <input type="text" class="form-control border-0" id="project" placeholder="Mesaj Konusu" name="Subject">
+                                                        <input type="text" class="form-control border-0" id="project" name="Subject" placeholder="Mesaj Konusu">
                                                         <label for="project">Mesaj Konusu</label>
                                                     </div>
                                                 </div>
+
+
+
+
+
                                                 <div class="col-12">
                                                     <div class="form-floating">
                                                         <textarea class="form-control border-0" placeholder="Mesajınızı Yazın" name="Message" id="message" style="height: 120px"></textarea>

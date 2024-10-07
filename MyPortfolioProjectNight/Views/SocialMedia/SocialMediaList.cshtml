@@ -13,7 +13,8 @@
         <th>URL</th>
         <th>İkon</th>
         <th>Durum</th>
-        <th>İşlemler</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -32,7 +33,13 @@
                 {
                     <a href="/SocialMedia/ChangeSocialMediaStatusToFalse/@item.SocialMediaId" class="btn btn-dark">Pasif Yap</a>
                 }
+            </td>
+
+            <td>
                 <a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-warning">Güncelle</a>
+            </td>
+
+            <td>
                 <a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-danger">Sil</a>
             </td>
         </tr>
@@ -41,4 +48,4 @@
 <br />
 <br />
 
- <a href="/SocialMedia/CreateSocialMedia/" class="btn btn-info">Yeni Sosyal Medya Hesabı Ekle</a>
+<a href="/SocialMedia/CreateSocialMedia/" class="btn btn-info">Yeni Sosyal Medya Hesabı Ekle</a>

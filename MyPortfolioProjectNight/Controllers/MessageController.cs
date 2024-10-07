@@ -5,17 +5,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MyPortfolioProjectNight.Controllers
+namespace PortfolioProject.Controllers
 {
     public class MessageController : Controller
     {
-        // GET: Message
         DbMyPortfolioNightEntities context = new DbMyPortfolioNightEntities();
+
         public ActionResult Inbox()
         {
             var values = context.Contact.ToList();
             return View(values);
         }
+
         public ActionResult ChangeMessageStatusToTrue(int id)
         {
             var value = context.Contact.Find(id);
@@ -30,6 +31,29 @@ namespace MyPortfolioProjectNight.Controllers
             value.IsRead = false;
             context.SaveChanges();
             return RedirectToAction("Inbox");
+        }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            var value = context.Contact.Find(id);
+            context.Contact.Remove(value);
+            context.SaveChanges();
+
+            return RedirectToAction("Inbox");
+        }
+
+        public ActionResult MessageDetail(int id)
+        {
+            var value = context.Contact.Find(id);
+
+            if (value.IsRead == false)
+            {
+                value.IsRead = true;
+            }
+
+            context.SaveChanges();
+
+            return View(value);
         }
     }
 }

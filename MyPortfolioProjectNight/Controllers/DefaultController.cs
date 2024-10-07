@@ -30,7 +30,6 @@ namespace MyPortfolioProjectNight.Controllers
 
 
 
-
         [HttpPost]
         public ActionResult Index(Contact contact)
         {
@@ -81,11 +80,16 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Skill.ToList().ToPagedList(sayfa, 5);
             return PartialView(values);
         }
-        public PartialViewResult OnlyPartialSkills(int sayfa =1)
-        {
-            var values = context.Skill.ToList().ToPagedList(sayfa,5);
-            return PartialView(values);
-        }
+
+
+
+        //public PartialViewResult OnlyPartialSkills(int sayfa =1)
+        //{
+        //    var values = context.Skill.ToList().ToPagedList(sayfa,5);
+        //    return PartialView(values);
+        //}
+
+
         public PartialViewResult PartialFooter()
         {
             return PartialView();
@@ -115,7 +119,6 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.Internship.ToList();
             return PartialView(values);
         }
-
         public PartialViewResult PartialSocialMedia()
         {
             var values = context.SocialMedia.ToList();

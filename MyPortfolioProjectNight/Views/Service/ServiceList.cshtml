@@ -1,0 +1,37 @@
+﻿@model List<MyPortfolioProjectNight.Models.Service>
+@{
+    ViewBag.Title = "ServiceList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2 class="mb-4">Hizmetlerim Listesi ve İşlemleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>İkon</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.ServiceId</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Ikon</td>
+            <td>
+                <a href="/Service/UpdateService/@item.ServiceId" class="btn btn-warning">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Service/DeleteService/@item.ServiceId" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Service/CreateService/" class="btn btn-info">Yeni Hizmet Ekleme</a>

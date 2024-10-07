@@ -14,7 +14,6 @@ namespace MyPortfolioProjectNight.Controllers
         public ActionResult SocialMediaList()
         {
             var values = context.SocialMedia.ToList();
-
             return View(values);
         }
 
