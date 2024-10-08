@@ -137,6 +137,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -577,6 +578,7 @@
     <Content Include="Views\Default\PartialSocialMediaAbout.cshtml" />
     <Content Include="Views\Default\PartialSocialMediaFooter.cshtml" />
     <Content Include="Views\Default\PartialSocialMediaHeader.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
