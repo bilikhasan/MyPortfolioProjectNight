@@ -81,17 +81,15 @@ namespace MyPortfolioProjectNight.Controllers
             return PartialView(values);
         }
 
-
-
         //public PartialViewResult OnlyPartialSkills(int sayfa =1)
         //{
         //    var values = context.Skill.ToList().ToPagedList(sayfa,5);
         //    return PartialView(values);
         //}
 
-
         public PartialViewResult PartialFooter()
         {
+            var values = context.SocialMedia.ToList();
             return PartialView();
         }
         public PartialViewResult PartialEducation()
@@ -124,5 +122,24 @@ namespace MyPortfolioProjectNight.Controllers
             var values = context.SocialMedia.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult PartialSocialMediaFooter()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();  //True olanlar gelsin.
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialSocialMediaAbout()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialSocialMediaHeader()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
+
     }
 }
