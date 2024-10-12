@@ -60,7 +60,6 @@ namespace PortfolioProject.Controllers
             value.Position = internship.Position;
             value.Description = internship.Description;
             value.SupervisorName = internship.SupervisorName;
-//value.SupervisorEmail = internship.SupervisorEmail;
             context.SaveChanges();
 
             return RedirectToAction("InternshipList");

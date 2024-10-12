@@ -1,4 +1,145 @@
-﻿@model List<MyPortfolioProjectNight.Models.Contact>
+﻿@*@model List<MyPortfolioProjectNight.Models.Contact>
+
+    @{
+        ViewBag.Title = "Inbox";
+        Layout = "~/Views/Admin/Index.cshtml";
+        int count = 0;
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Gönderen</th>
+            <th>Email</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Tarih</th>
+            <th>İşlem</th>
+            <th>Mesaj Oku</th>
+            <th>Sil</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+
+            string badgeClass = "";
+            switch (item.Category.CategoryName)
+            {
+                case "Teşekkür":
+                    badgeClass = "badge bg-danger";
+                    break;
+                case "Öneri":
+                    badgeClass = "badge bg-success";
+                    break;
+                case "Proje Talebi":
+                    badgeClass = "badge bg-primary";
+                    break;
+                case "Referans":
+                    badgeClass = "badge bg-warning";
+                    break;
+                case "Toplantı":
+                    badgeClass = "badge bg-purple";
+                    break;
+                case "Görüşme":
+                    badgeClass = "badge bg-warning";
+                    break;
+                case "Reklam":
+                    badgeClass = "badge bg-pink";
+                    break;
+                case "Diğer":
+                    badgeClass = "badge bg-secondary";
+                    break;
+                default:
+                    badgeClass = "badge bg-dark";
+                    break;
+            }
+
+            <tr>
+                <th>@count</th>
+                <td>@item.NameSurname</td>
+                <td>@item.Email</td>
+
+                <td>
+                    @if (item.Subject == "Teşekkür")
+                    {
+                        <p style="color: blue; font-weight:bold ">@item.Subject</p>
+                    }
+
+                    @if (item.Subject == "Öneri")
+                    {
+                        <p style="color: #00ffff; font-weight: bold">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Proje Talebi")
+                    {
+                        <p style="color: red; font-weight: bold">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Referans")
+                    {
+                        <p style="color: green; font-weight: bold ">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Toplantı")
+                    {
+                        <p style="color: #b200ff; font-weight: bold">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Görüşme")
+                    {
+                        <p style="color: darkblue; font-weight: bold">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Reklam")
+                    {
+                        <p style="color: #ffd800; font-weight: bold">@item.Subject</p>
+                    }
+                    @if (item.Subject == "Diğer")
+                    {
+                        <p style="color: orange; font-weight: bold">@item.Subject</p>
+                    }
+                </td>
+
+                <td>@item.Message</td>
+
+                <td>@item.SendDate.Value.ToString("yyyy-MM-dd")</td>
+
+                <td>
+                    @if (item.IsRead == false)
+                    {
+                        <a href="/Message/ChangeMessageStatusToTrue/@item.ContactId" class="btn btn-info">Okundu Olarak İşaretle</a>
+                    }
+                    else
+                    {
+                        <a href="/Message/ChangeMessageStatusToFalse/@item.ContactId" class="btn btn-dark">Okunmadı Olarak İşaretle</a>
+                    }
+                </td>
+
+                <td>
+                    <a href="/Message/MessageDetail/@item.ContactId" class="btn btn-warning">Mesajı Aç</a>
+                </td>
+
+                <td>
+                    <a href="/Message/DeleteMessage/@item.ContactId" class="btn btn-danger">Mesajı Sil</a>
+                </td>
+            </tr>
+        }
+    </table>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@model List<MyPortfolioProjectNight.Models.Contact>
+
 
 @{
     ViewBag.Title = "Inbox";
@@ -9,96 +150,72 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
+        <th>Kategori</th>
         <th>Gönderen</th>
         <th>Email</th>
         <th>Konu</th>
         <th>Mesaj</th>
         <th>Tarih</th>
-        <th>İşlem</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
         <th>Mesaj Oku</th>
-        <th>Sil</th>
+        <th>Mesaj Sil</th>
+
     </tr>
     @foreach (var item in Model)
     {
         count++;
 
-        //string badgeClass = "";
-        //switch (item.Category.CategoryName)
-        //{
-        //    case "Teşekkür":
-        //        badgeClass = "badge bg-danger";
-        //        break;
-        //    case "Öneri":
-        //        badgeClass = "badge bg-success";
-        //        break;
-        //    case "Proje Talebi":
-        //        badgeClass = "badge bg-primary";
-        //        break;
-        //    case "Referans":
-        //        badgeClass = "badge bg-warning";
-        //        break;
-        //    case "Toplantı":
-        //        badgeClass = "badge bg-purple";
-        //        break;
-        //    case "Görüşme":
-        //        badgeClass = "badge bg-warning";
-        //        break;
-        //    case "Reklam":
-        //        badgeClass = "badge bg-pink";
-        //        break;
-        //    case "Diğer":
-        //        badgeClass = "badge bg-secondary";
-        //        break;
-        //    default:
-        //        badgeClass = "badge bg-dark";
-        //        break;
-        //}
+        string badgeClass = "";
+        switch (item.Category.CategoryName)
+        {
+            case "Teşekkür":
+                badgeClass = "badge bg-danger";
+                break;
+            case "Öneri":
+                badgeClass = "badge bg-success";
+                break;
+            case "Proje Talebi":
+                badgeClass = "badge bg-primary";
+                break;
+            case "Referans":
+                badgeClass = "badge bg-warning";
+                break;
+            case "Toplantı":
+                badgeClass = "badge bg-purple";
+                break;
+            case "Görüşme":
+                badgeClass = "badge bg-warning";
+                break;
+            case "Reklam":
+                badgeClass = "badge bg-pink";
+                break;
+            case "Diğer":
+                badgeClass = "badge bg-secondary";
+                break;
+            default:
+                badgeClass = "badge bg-dark";
+                break;
+        }
 
         <tr>
-            <th>@count</th>
+            <td>@count</td>
+            <td><span class="@badgeClass p-2" style="color:white; font-size: small">@item.Category.CategoryName</span></td>
             <td>@item.NameSurname</td>
             <td>@item.Email</td>
-           
+            <td>@item.Subject</td>
+            <td>@item.Message</td>
+            <td>@item.SendDate.Value.ToString("dd.MM.yyyy HH:mm")</td>
             <td>
-                @if (item.Subject == "Teşekkür")
+                @if (item.IsRead == true)
                 {
-                    <p style="color: blue; font-weight:bold ">@item.Subject</p>
+                    <span class="badge badge-success p-2">Okundu</span>
                 }
-
-                @if (item.Subject == "Öneri")
+                else
                 {
-                    <p style="color: #00ffff; font-weight: bold">@item.Subject</p>
-                }
-                @if (item.Subject == "Proje Talebi")
-                {
-                    <p style="color: red; font-weight: bold">@item.Subject</p>
-                }
-                @if (item.Subject == "Referans")
-                {
-                    <p style="color: green; font-weight: bold ">@item.Subject</p>
-                }
-                @if (item.Subject == "Toplantı")
-                {
-                    <p style="color: #b200ff; font-weight: bold">@item.Subject</p>
-                }
-                @if (item.Subject == "Görüşme")
-                {
-                    <p style="color: darkblue; font-weight: bold">@item.Subject</p>
-                }
-                @if (item.Subject == "Reklam")
-                {
-                    <p style="color: #ffd800; font-weight: bold">@item.Subject</p>
-                }
-                @if (item.Subject == "Diğer")
-                {
-                    <p style="color: orange; font-weight: bold">@item.Subject</p>
+                    <span class="badge badge-danger p-2">Okunmadı</span>
                 }
             </td>
-
-            <td>@item.Message</td>
-
-            <td>@item.SendDate.Value.ToString("yyyy-MM-dd")</td>
-
             <td>
                 @if (item.IsRead == false)
                 {
@@ -109,14 +226,8 @@
                     <a href="/Message/ChangeMessageStatusToFalse/@item.ContactId" class="btn btn-dark">Okunmadı Olarak İşaretle</a>
                 }
             </td>
-
-            <td>
-                <a href="/Message/MessageDetail/@item.ContactId" class="btn btn-warning">Mesajı Aç</a>
-            </td>
-
-            <td>
-                <a href="/Message/DeleteMessage/@item.ContactId" class="btn btn-danger">Mesajı Sil</a>
-            </td>
+            <td><a href="/Message/MessageDetail/@item.ContactId" class="btn btn-warning">Mesajı Aç</a></td>
+            <td><a href="/Message/DeleteMessage/@item.ContactId" class="btn btn-danger">Mesajı Sil</a></td>
         </tr>
     }
-</table>
+</table> 
