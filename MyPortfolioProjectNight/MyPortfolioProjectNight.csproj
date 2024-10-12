@@ -143,13 +143,16 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InternshipController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\PdfController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -579,6 +582,16 @@
     <Content Include="Views\Default\PartialSocialMediaFooter.cshtml" />
     <Content Include="Views\Default\PartialSocialMediaHeader.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Internship\InternshipList.cshtml" />
+    <Content Include="Views\Internship\CreateInternship.cshtml" />
+    <Content Include="Views\Internship\UpdateInternship.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioList.cshtml" />
+    <Content Include="Views\Portfolio\CreatePortfolio.cshtml" />
+    <Content Include="Views\Portfolio\UpdatePortfolio.cshtml" />
+    <Content Include="Views\Testimonial\TestimonialList.cshtml" />
+    <Content Include="Views\Testimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Category\UpdateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
