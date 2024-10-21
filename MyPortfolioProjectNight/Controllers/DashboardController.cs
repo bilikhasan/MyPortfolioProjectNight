@@ -20,7 +20,7 @@ namespace MyPortfolioProjectNight.Controllers
             ViewBag.SocialMediaCount = context.SocialMedia.Count();
             ViewBag.MessageCount = context.Contact.Count();
 
-            return View();
+            return View(); 
         }
     }
 }
