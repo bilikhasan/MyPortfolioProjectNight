@@ -1,40 +1,29 @@
-Portfolyo Projesi
-GENEL BAKIŞ
-✨ Bu projede klasik bir CV dinamik tabanlı bir web sitesine dönüştürüldü.
+<b>"Portfolyo Project"</b>
 
-💡 Kullanıcının tüm bilgilerini dinamik olarak eklemesi sağlandı.
+Hello 🌞 I would like to share my first project, the Portfolio project, which I completed with the training and mentorship of our instructor Murat Yücedağ within M&Y Yazılım Eğitim Akademi Danışmanlık
+In this project, we went beyond the classic CV view and created a dynamic-based Portfolio&CV site.
 
-💻 Admin Panelinde Ekle/Sil/Güncelle/Listele özellikleri eklendi
+💡 Users can add all their information dynamically.
 
-🥮 İstatistikler kullanılarak elde edilen veriler görselleştirildi.
+💻 Add/Delete/Update/List features were added to the Admin Panel.
 
-📑 Siteler üzerinde NavBar ve Sidebar özellikleri ile sayfalar arası yönlendirme ugyulandı.
+🥮 Data obtained using Column Chart and Statistics were visualized.
 
-📎 CV indirme linkleri eklendi.
+📎 CV download links, in-page redirects and social media redirects were added.
+💕 A message leaving feature was created for site visitors via the Communication panel.
 
-📍 Sosyal medya yönlendirmeleri sağlandı.
+©️ ASP.Net MVC Framework based
 
-💕 Site ziyaretçilerine İletişim paneli vasıtasıyla Mesaj bırakma özelliği oluşturuldu.
+🔎 Entity Framework was used as an ORM tool.
 
-Kullanılan Teknolojiler
-©️ ASP.Net MVC Framework tabanlı
+💯 DB First Approach was applied.
 
-🔎 Entity Framework ORM aracı olarak kullanıldı
+✔️ CRUD operations were applied.
 
-💯 DB First Yaklaşımı uygulandı
+🚀 LINQ queries were added.
 
-✔️ CRUD işlemleri uygulandı
+📚 Database was created with MSSQL Server.
 
-🎪 Html-CSS-Boostrap kullanılarak arayüz iyileştirildi
+🔨 PartialView, Paging structure, data retrieval operations from DropDownList were implemented.
 
-🚀 LINQ sorguları eklendi
-
-📚 MSSQL Server ile veri tabanı oluşturuldu
-
-🔅 DropDownList'ten veri çekildi
-
-🔨 PartialView kullanılarak sayfalar arası geçiş yönetimi kolaylaştırıldı
-
-📟 Paging Yapısı kullanılarak Yetenekler sayfasının görünümü sadeleştirildi.
-
-🌕 ChartJs Plugin kullanılarak grafik oluşturuldu
+🌕 Data was converted to a chart using ChartJs Plugin.
